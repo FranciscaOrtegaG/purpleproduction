@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://ypqs4vuw1axc"]
+
+[ext_resource type="Texture2D" uid="uid://6ixx86su1rno" path="res://assets/knight.png" id="1_7lwot"]
+[ext_resource type="Script" path="res://enemy.gd" id="1_oinph"]
+[ext_resource type="Script" path="res://components/hurtbox.gd" id="2_1yan6"]
+[ext_resource type="Script" path="res://components/hitbox.gd" id="3_5f1jq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mx5lw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tuseq"]
+size = Vector2(17.25, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ys6o5"]
+size = Vector2(17.5, 17)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(4, 4)
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_oinph")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(5.96046e-08, 4)
+rotation = 3.14159
+scale = Vector2(0.705064, -0.875911)
+shape = SubResource("CircleShape2D_mx5lw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.521569, 0, 1, 1)
+scale = Vector2(1.18258, 1.17801)
+texture = ExtResource("1_7lwot")
+hframes = 8
+vframes = 8
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("2_1yan6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0.375, -6)
+shape = SubResource("RectangleShape2D_tuseq")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_5f1jq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0.5, 5.75)
+shape = SubResource("RectangleShape2D_ys6o5")
