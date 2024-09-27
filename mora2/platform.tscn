@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://jqm87wca24li"]
+[gd_scene load_steps=5 format=3 uid="uid://c3k6f8rblfpgm"]
 
-[ext_resource type="Texture2D" uid="uid://1c0o5ds680jf" path="res://assets/fondoplataforma.png" id="1_wp5r1"]
+[ext_resource type="Texture2D" uid="uid://fbsy8niwv3kp" path="res://icon.svg" id="1_wffn8"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lbo2g"]
 
@@ -23,4 +23,4 @@ shape = SubResource("RectangleShape2D_rpsx8")
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(-81, -6.00001)
 scale = Vector2(0.545918, 0.44898)
-texture = ExtResource("1_wp5r1")
+texture = ExtResource("1_wffn8")
