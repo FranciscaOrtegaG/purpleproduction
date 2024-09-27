@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://jqm87wca24li"]
+
+[ext_resource type="Texture2D" uid="uid://1c0o5ds680jf" path="res://assets/fondoplataforma.png" id="1_wp5r1"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lbo2g"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_itr43"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpsx8"]
+size = Vector2(213, 88)
+
+[node name="Platform" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+material = SubResource("CanvasItemMaterial_lbo2g")
+position = Vector2(82, 7)
+physics_material_override = SubResource("PhysicsMaterial_itr43")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-81, -6)
+shape = SubResource("RectangleShape2D_rpsx8")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-81, -6.00001)
+scale = Vector2(0.545918, 0.44898)
+texture = ExtResource("1_wp5r1")

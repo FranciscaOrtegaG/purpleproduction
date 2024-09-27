@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://q8n368cdfywq"]
+
+[ext_resource type="Texture2D" uid="uid://bd5v0005t7v8f" path="res://assets/fondoplataformaWINNER.jpg" id="1_la687"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fh2q3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3vn7k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jaa2w"]
+size = Vector2(213, 88)
+
+[node name="Endingplatform" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+material = SubResource("CanvasItemMaterial_fh2q3")
+position = Vector2(82, 7)
+physics_material_override = SubResource("PhysicsMaterial_3vn7k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-81, -6)
+shape = SubResource("RectangleShape2D_jaa2w")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-81, -6.00001)
+scale = Vector2(0.545918, 0.44898)
+texture = ExtResource("1_la687")

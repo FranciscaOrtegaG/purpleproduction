@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://buluoe5eq5ktt"]
+
+[ext_resource type="PackedScene" uid="uid://jqm87wca24li" path="res://platform.tscn" id="1_w5e2c"]
+
+[node name="platforms" type="Node2D"]
+
+[node name="Platform6" parent="." instance=ExtResource("1_w5e2c")]
+position = Vector2(984, 670)
+scale = Vector2(1.02683, 1.02185)
+
+[node name="Platform4" parent="." instance=ExtResource("1_w5e2c")]
+position = Vector2(649, 498)
+
+[node name="Platform5" parent="." instance=ExtResource("1_w5e2c")]
+position = Vector2(821, 584)
+
+[node name="Platform3" parent="." instance=ExtResource("1_w5e2c")]
+position = Vector2(485, 586)
+
+[node name="Platform2" parent="." instance=ExtResource("1_w5e2c")]
+position = Vector2(319, 672)
+
+[node name="Platform" parent="." instance=ExtResource("1_w5e2c")]
+position = Vector2(106, 672)
+
+[node name="Platform7" parent="." instance=ExtResource("1_w5e2c")]
+position = Vector2(643, 586)
+
+[node name="Platform8" parent="." instance=ExtResource("1_w5e2c")]
+position = Vector2(528, 673)
+
+[node name="Platform9" parent="." instance=ExtResource("1_w5e2c")]
+position = Vector2(738, 673)
+
+[node name="Platform10" parent="." instance=ExtResource("1_w5e2c")]
+position = Vector2(884, 673)

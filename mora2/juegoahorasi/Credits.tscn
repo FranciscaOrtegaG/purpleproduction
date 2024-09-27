@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5gpe5kpfdtxi"]
+
+[ext_resource type="Texture2D" uid="uid://df07unqpkue1m" path="res://assets/Dungeon Platformer Tileset [16x16][FREE] - RottingPixels/CosmicCastleLilacPNG_PetricakeGames.png" id="1_owlj2"]
+[ext_resource type="Script" path="res://credits.gd" id="1_pitn1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sbvl8"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pitn1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.42226, 0.0967314, 0.296077, 1)
+position = Vector2(570, 321)
+scale = Vector2(4.62667, 4.67285)
+texture = ExtResource("1_owlj2")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 0.603922, 1, 1)
+layout_mode = 0
+offset_left = 267.0
+offset_top = 223.0
+offset_right = 841.0
+offset_bottom = 324.0
+scale = Vector2(1.13834, 2.20145)
+text = "music: https://brackeysgames.itch.io/brackeys-platformer-bundle
+fonts: https://datagoblin.itch.io/monogram
+character: https://jumpbutton.itch.io/girlknightasset
+back pictures: https://petricakegames.itch.io/castle-lilac-platformer-tileset
+"
+label_settings = SubResource("LabelSettings_sbvl8")
+horizontal_alignment = 1
+autowrap_mode = 3
+justification_flags = 128
+
+[node name="MENU" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 454.0
+offset_top = 54.0
+offset_right = 511.0
+offset_bottom = 85.0
+scale = Vector2(5.05445, 4.37594)
+text = "MENU"

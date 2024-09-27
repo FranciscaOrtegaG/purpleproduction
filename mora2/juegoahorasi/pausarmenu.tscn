@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd2toblo7sxi0"]
+
+[ext_resource type="Script" path="res://pausarmenu.gd" id="1_ifp64"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_ifp64")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 456.0
+offset_top = 208.0
+offset_right = 544.0
+offset_bottom = 336.0
+scale = Vector2(2.60253, 2.00625)
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "    PAUSE"
+
+[node name="Resume" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = " Resume"
+
+[node name="Menu" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Menu"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"

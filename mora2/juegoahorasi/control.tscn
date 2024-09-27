@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://deiptifes1igj"]
+
+[ext_resource type="Texture2D" uid="uid://df07unqpkue1m" path="res://assets/Dungeon Platformer Tileset [16x16][FREE] - RottingPixels/CosmicCastleLilacPNG_PetricakeGames.png" id="1_aqo4r"]
+[ext_resource type="Script" path="res://control.gd" id="1_hnm01"]
+[ext_resource type="PackedScene" uid="uid://db630vvojlej7" path="res://node_2d.tscn" id="2_we8s4"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hnm01")
+main = ExtResource("2_we8s4")
+
+[node name="CosmicCastleLilacPngPetricakeGames" type="Sprite2D" parent="."]
+position = Vector2(582, 305)
+scale = Vector2(4.52723, 4.18438)
+texture = ExtResource("1_aqo4r")
+
+[node name="MainMenu" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 189.0
+offset_right = 589.0
+offset_bottom = 317.0
+scale = Vector2(2.10824, 2.29829)
+
+[node name="Label" type="Label" parent="MainMenu"]
+layout_mode = 2
+text = "SUPERMORADO"
+
+[node name="Start" type="Button" parent="MainMenu"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "  Start  "
+
+[node name="Credits" type="Button" parent="MainMenu"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Credits"
+
+[node name="Quit" type="Button" parent="MainMenu"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
