@@ -52,9 +52,9 @@ func _physics_process(delta: float) -> void:
 		else:
 			playback.travel("air")
 	if position.y > 1000:
-		get_tree().change_scene_to_file("res://Loser.tscn")
+		get_tree().change_scene_to_file("res://escenas/escena_loser/Loser.tscn")
 	if position.x > 3440:
-		get_tree().change_scene_to_file("res://Winner.tscn")
+		get_tree().change_scene_to_file("res://escenas/escena_winner/Winner.tscn")
 	
 		
 			
@@ -67,4 +67,4 @@ func take_damage(damage: int):
 	playerlife -= damage
 	if playerlife <= 0:
 		queue_free()	
-		get_tree().change_scene_to_file("res://Loser.tscn")
+		get_tree().change_scene_to_file("res://escenas/escena_loser/Loser.tscn")
