@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b47exo30n1f16"]
 
-[ext_resource type="Script" path="res://control.gd" id="1_dj7gp"]
-[ext_resource type="PackedScene" uid="uid://db630vvojlej7" path="res://node_2d.tscn" id="2_oi10v"]
-[ext_resource type="Texture2D" uid="uid://b7gr0nqm22t8q" path="res://assets/CosmicLilac_Tiles.png" id="3_dy1ri"]
+[ext_resource type="Script" path="res://control.gd" id="1_tltb8"]
+[ext_resource type="PackedScene" uid="uid://db630vvojlej7" path="res://node_2d.tscn" id="2_tmdd0"]
+[ext_resource type="Texture2D" uid="uid://b7gr0nqm22t8q" path="res://assets/CosmicLilac_Tiles.png" id="3_rhfnx"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,13 +11,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_dj7gp")
-main = ExtResource("2_oi10v")
+script = ExtResource("1_tltb8")
+main = ExtResource("2_tmdd0")
 
 [node name="CosmicCastleLilacPngPetricakeGames" type="Sprite2D" parent="."]
 position = Vector2(578, 370)
 scale = Vector2(5.66071, 5.77253)
-texture = ExtResource("3_dy1ri")
+texture = ExtResource("3_rhfnx")
 
 [node name="MainMenu" type="VBoxContainer" parent="."]
 layout_mode = 0

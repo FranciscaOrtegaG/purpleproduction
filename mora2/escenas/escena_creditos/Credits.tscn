@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5gpe5kpfdtxi"]
 
 [ext_resource type="Texture2D" uid="uid://df07unqpkue1m" path="res://assets/Dungeon Platformer Tileset [16x16][FREE] - RottingPixels/CosmicCastleLilacPNG_PetricakeGames.png" id="1_owlj2"]
-[ext_resource type="Script" path="res://credits.gd" id="1_pitn1"]
+[ext_resource type="Script" path="res://escenas/escena_creditos/credits.gd" id="1_pitn1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sbvl8"]
 

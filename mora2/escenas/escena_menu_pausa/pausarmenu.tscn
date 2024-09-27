@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bd2toblo7sxi0"]
 
-[ext_resource type="Script" path="res://pausarmenu.gd" id="1_ifp64"]
+[ext_resource type="Script" path="res://escenas/escena_menu_pausa/pausarmenu.gd" id="1_ifp64"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3

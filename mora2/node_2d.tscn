@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://db630vvojlej7"]
 
-[ext_resource type="PackedScene" uid="uid://dlw0hm5o0x6bn" path="res://player.tscn" id="1_bm5rm"]
+[ext_resource type="PackedScene" uid="uid://dlw0hm5o0x6bn" path="res://escenas/escena_player/player.tscn" id="1_bm5rm"]
 [ext_resource type="Texture2D" uid="uid://df07unqpkue1m" path="res://assets/Dungeon Platformer Tileset [16x16][FREE] - RottingPixels/CosmicCastleLilacPNG_PetricakeGames.png" id="1_xdg8f"]
 [ext_resource type="PackedScene" uid="uid://buluoe5eq5ktt" path="res://platforms.tscn" id="3_5tif2"]
-[ext_resource type="PackedScene" uid="uid://ypqs4vuw1axc" path="res://enemy.tscn" id="4_8di0f"]
+[ext_resource type="PackedScene" uid="uid://ypqs4vuw1axc" path="res://escenas/escena_enemy/enemy.tscn" id="4_8di0f"]
 [ext_resource type="AudioStream" uid="uid://ddb7rnv1btmdb" path="res://assets/Stream Loops 2024-03-30_02.ogg" id="5_cq8ci"]
-[ext_resource type="PackedScene" uid="uid://bd2toblo7sxi0" path="res://pausarmenu.tscn" id="6_us5sw"]
+[ext_resource type="PackedScene" uid="uid://bd2toblo7sxi0" path="res://escenas/escena_menu_pausa/pausarmenu.tscn" id="6_us5sw"]
 [ext_resource type="PackedScene" uid="uid://jqm87wca24li" path="res://platform.tscn" id="7_40x0l"]
 [ext_resource type="PackedScene" uid="uid://q8n368cdfywq" path="res://END.tscn" id="8_cyxsc"]
 
