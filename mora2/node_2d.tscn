@@ -50,6 +50,6 @@ autoplay = true
 visible = false
 
 [node name="Platform" parent="." instance=ExtResource("7_40x0l")]
-position = Vector2(1546, 741)
+position = Vector2(1541, 736)
 rotation = 0.00589347
 scale = Vector2(15.4117, 2.83478)

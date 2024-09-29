@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bt0hwmmbq4at8"]
+[gd_scene load_steps=3 format=3 uid="uid://e5aepa11tltk"]
 
 [ext_resource type="Script" path="res://control.gd" id="1_k22ol"]
-[ext_resource type="PackedScene" uid="uid://db630vvojlej7" path="res://node_2d.tscn" id="2_h1e0k"]
-[ext_resource type="Texture2D" uid="uid://b7gr0nqm22t8q" path="res://assets/CosmicLilac_Tiles.png" id="3_8exni"]
+[ext_resource type="PackedScene" uid="uid://dk3mhe0yrddtt" path="res://node_2d.tscn" id="2_h1e0k"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -14,11 +13,6 @@ grow_vertical = 2
 script = ExtResource("1_k22ol")
 main = ExtResource("2_h1e0k")
 
-[node name="CosmicCastleLilacPngPetricakeGames" type="Sprite2D" parent="."]
-position = Vector2(578, 370)
-scale = Vector2(5.66071, 5.77253)
-texture = ExtResource("3_8exni")
-
 [node name="MainMenu" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 466.0
@@ -29,7 +23,8 @@ scale = Vector2(2.10824, 2.29829)
 
 [node name="Label" type="Label" parent="MainMenu"]
 layout_mode = 2
-text = "SUPERMORADO"
+text = "MORA2"
+horizontal_alignment = 1
 
 [node name="Start" type="Button" parent="MainMenu"]
 unique_name_in_owner = true
