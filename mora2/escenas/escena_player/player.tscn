@@ -563,4 +563,7 @@ stream = ExtResource("9_7343h")
 stream = ExtResource("10_xnd5u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(372.777, -120.74)
+position = Vector2(-406.025, -478.97)
+rotation = 3.14159
+scale = Vector2(1.58226e+09, 1138.51)
+offset = Vector2(520, 420)
