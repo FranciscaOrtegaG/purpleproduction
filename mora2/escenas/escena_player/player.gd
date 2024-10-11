@@ -54,6 +54,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			playback.travel("air")
 	if position.y > 1000:
+		Global.player_position = Vector2(0, 0) 
 		get_tree().change_scene_to_file("res://escenas/escena_loser/Loser.tscn")
 	if position.x > 3440:
 		get_tree().change_scene_to_file("res://escenas/escena_winner/Winner.tscn")
