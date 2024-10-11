@@ -507,6 +507,7 @@ size = Vector2(45.5, 82.5)
 
 [node name="player" type="CharacterBody2D"]
 position = Vector2(-79, 48)
+scale = Vector2(0.992551, 1.00215)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_l7s7c")

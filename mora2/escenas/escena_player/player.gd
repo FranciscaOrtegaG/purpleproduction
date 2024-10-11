@@ -21,6 +21,7 @@ extends CharacterBody2D
 
 
 func _ready() -> void:
+	position = Global.player_position  # Restauramos la posición guardada
 	animation_tree.active = true
 	hitbox.damage_dealt.connect(_on_damage_dealt)
 
@@ -55,7 +56,9 @@ func _physics_process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://escenas/escena_loser/Loser.tscn")
 	if position.x > 3440:
 		get_tree().change_scene_to_file("res://escenas/escena_winner/Winner.tscn")
-	
+	if Input.is_action_just_pressed("ui_down"):
+		Global.player_position = position  # Guardamos la posición actual en el singleton
+		get_tree().change_scene_to_file("res://otradimension.tscn")
 		
 			
 func _on_damage_dealt() -> void:
