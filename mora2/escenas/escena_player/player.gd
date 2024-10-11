@@ -53,7 +53,7 @@ func _physics_process(delta: float) -> void:
 			playback.travel("jump")
 		else:
 			playback.travel("air")
-	if position.y > 1000:
+	if position.y > 800:
 		Global.player_position = Vector2(0, 0) 
 		get_tree().change_scene_to_file("res://escenas/escena_loser/Loser.tscn")
 	if position.x > 3440:
@@ -61,6 +61,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_down"):
 		
 		Global.player_position = position  # Guardamos la posición actual en el singleton
+		Global.velocity_x = velocity.x
+		Global.velocity_y = velocity.y
 		if Global.scene == 1:
 			Global.scene = 2
 			get_tree().change_scene_to_file("res://otradimension.tscn")
