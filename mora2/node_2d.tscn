@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dk3mhe0yrddtt"]
 
 [ext_resource type="PackedScene" uid="uid://dlw0hm5o0x6bn" path="res://escenas/escena_player/player.tscn" id="1_bm5rm"]
+[ext_resource type="PackedScene" uid="uid://c5cgh5geicxo4" path="res://dm_1.tscn" id="4_a3ptu"]
 [ext_resource type="AudioStream" uid="uid://ddb7rnv1btmdb" path="res://assets/Stream Loops 2024-03-30_02.ogg" id="5_cq8ci"]
 [ext_resource type="PackedScene" uid="uid://bd2toblo7sxi0" path="res://escenas/escena_menu_pausa/pausarmenu.tscn" id="6_us5sw"]
-[ext_resource type="PackedScene" uid="uid://c3k6f8rblfpgm" path="res://platform.tscn" id="7_40x0l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_caaxu"]
 
@@ -49,7 +49,5 @@ autoplay = true
 [node name="PauseMenu" parent="." instance=ExtResource("6_us5sw")]
 visible = false
 
-[node name="Platform" parent="." instance=ExtResource("7_40x0l")]
-position = Vector2(1541, 736)
-rotation = 0.00589347
-scale = Vector2(15.4117, 2.83478)
+[node name="dm1" parent="." instance=ExtResource("4_a3ptu")]
+position = Vector2(-1, -3)
