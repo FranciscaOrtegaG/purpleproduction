@@ -19,6 +19,7 @@ extends CharacterBody2D
 @onready var playback = animation_tree.get("parameters/playback")
 @onready var pivot: Node2D = $Pivote
 
+var scene = "res://node_2d.tscn"
 
 func _ready() -> void:
 	position = Global.player_position  # Restauramos la posición guardada
@@ -57,10 +58,14 @@ func _physics_process(delta: float) -> void:
 	if position.x > 3440:
 		get_tree().change_scene_to_file("res://escenas/escena_winner/Winner.tscn")
 	if Input.is_action_just_pressed("ui_down"):
-		Global.player_position = position  # Guardamos la posición actual en el singleton
-		get_tree().change_scene_to_file("res://otradimension.tscn")
 		
-			
+		Global.player_position = position  # Guardamos la posición actual en el singleton
+		if Global.scene == 1:
+			Global.scene = 2
+			get_tree().change_scene_to_file("res://otradimension.tscn")
+		elif Global.scene == 2:
+			Global.scene = 1
+			get_tree().change_scene_to_file("res://node_2d.tscn")
 func _on_damage_dealt() -> void:
 	hit.play()
 	velocity.y = -jump_speed
