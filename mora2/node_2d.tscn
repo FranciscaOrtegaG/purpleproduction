@@ -12,25 +12,7 @@ script/source = "extends Node2D
 var character_scene = preload(\"res://node_2d.tscn\")  # Cargar la escena del personaje
 
 func _ready():
-	# Instanciar el primer personaje
-	var character1 = character_scene.instantiate()
-	if character1 != null:
-		character1.position = Vector2(320, 544)  # Asignar posición inicial al personaje 1
-		character1.left_limit = 50               # Asignar límites personalizados
-		character1.right_limit = 250
-		add_child(character1)                    # Agregar el personaje a la escena
-	else:
-		print(\"Error: No se pudo instanciar character1\")
-
-	# Instanciar el segundo personaje
-	var character2 = character_scene.instantiate()
-	if character2 != null:
-		character2.position = Vector2(400, 200)  # Asignar posición inicial al personaje 2
-		character2.left_limit = 350              # Asignar límites personalizados
-		character2.right_limit = 550
-		add_child(character2)                    # Agregar el personaje a la escena
-	else:
-		print(\"Error: No se pudo instanciar character2\")
+	pass
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_caaxu"]
@@ -62,7 +44,7 @@ visible = false
 position = Vector2(1, -1)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_oo8jh")]
-position = Vector2(297, 439)
-speed = 50
-left_limit = 150
-right_limit = 250
+position = Vector2(377, 447)
+speed = 20
+left_limit = 300
+right_limit = 400

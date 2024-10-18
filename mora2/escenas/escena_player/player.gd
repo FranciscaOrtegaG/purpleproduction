@@ -72,7 +72,7 @@ func _physics_process(delta: float) -> void:
 func _on_damage_dealt() -> void:
 	hit.play()
 	velocity.y = -jump_speed
-	print("We made damage")
+	print("We made damage to enemy")
 	
 func take_damage(damage: int):
 	playerlife -= damage

@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://midlmbk8b4i4"]
+[gd_scene load_steps=13 format=3 uid="uid://midlmbk8b4i4"]
 
 [ext_resource type="Script" path="res://escenas/escena_enemys/enemy.gd" id="1_1c07l"]
 [ext_resource type="Texture2D" uid="uid://cvncqbunmisld" path="res://assets/ToxicFrog/PurpleBlue/ToxicFrogPurpleBlue_Idle.png" id="2_e24t3"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_eacg1"]
+[ext_resource type="Script" path="res://components/hurtbox.gd" id="3_nos5f"]
+[ext_resource type="Script" path="res://components/hitbox.gd" id="4_gqfm4"]
 
 [sub_resource type="Animation" id="Animation_nh7ls"]
 length = 0.001
@@ -224,19 +224,48 @@ _data = {
 "idle": SubResource("Animation_ur3b8")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_1c07l")
+[sub_resource type="CircleShape2D" id="CircleShape2D_ddxxm"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-texture_filter = 1
-position = Vector2(16, 0)
-scale = Vector2(2.78088, 2.74929)
-shape = SubResource("CircleShape2D_eacg1")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6otvd"]
+size = Vector2(82.0235, 19.2508)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hc02"]
+size = Vector2(12.6807, 918951)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_1c07l")
+metadata/_edit_horizontal_guides_ = [-72.0]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_qgt7k")
 }
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Hurtbox" type="Area2D" parent="Node2D"]
+script = ExtResource("3_nos5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Hurtbox"]
+position = Vector2(24, 0)
+scale = Vector2(3.67407, 0.697096)
+shape = SubResource("CircleShape2D_ddxxm")
+
+[node name="Hitbox" type="Area2D" parent="Node2D"]
+script = ExtResource("4_gqfm4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Hitbox"]
+position = Vector2(24, -24)
+scale = Vector2(0.777524, 0.864792)
+shape = SubResource("RectangleShape2D_6otvd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+texture_filter = 1
+position = Vector2(16, 0)
+scale = Vector2(2.98428, -3.36274e-05)
+shape = SubResource("RectangleShape2D_3hc02")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(16, -8)

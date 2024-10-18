@@ -1,10 +1,15 @@
 extends CharacterBody2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@export var enemylife = 10
 
 @export var speed = 200
 @export var left_limit = -100
 @export var right_limit = 100
+
+@onready var hurtbox: Hurtbox = $Node2D/Hurtbox
+@onready var hitbox: Hitbox = $Node2D/Hitbox
 
 var direction = 1
 
@@ -20,3 +25,27 @@ func _physics_process(delta: float) -> void:
 		direction = -1
 	elif position.x < left_limit:
 		direction = 1
+
+func die():
+	animation_player.play("hurt")
+	queue_free()
+	pass
+
+
+
+
+func _ready() -> void:
+	hitbox.damage_dealt.connect(_on_damage_dealt)
+func _on_damage_dealt() -> void:
+	
+	print("We made damage to player")
+	
+
+func take_damage(damage: int):
+	enemylife -= damage
+	animation_player.play("hurt")
+	if enemylife <= 0:
+		queue_free()
+	
+
+	
