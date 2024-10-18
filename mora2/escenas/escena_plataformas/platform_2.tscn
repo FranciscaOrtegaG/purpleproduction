@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=4 uid="uid://ccnh7jdkxtcha"]
+
+[ext_resource type="PackedScene" uid="uid://cesjwuaeqa87n" path="res://components/tilemap.tscn" id="1_cg1yv"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lbo2g"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_itr43"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpsx8"]
+size = Vector2(64, 32)
+
+[node name="Platform" type="Node2D"]
+scale = Vector2(2, 2)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+material = SubResource("CanvasItemMaterial_lbo2g")
+physics_material_override = SubResource("PhysicsMaterial_itr43")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_rpsx8")
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_cg1yv")]
+tile_map_data = PackedByteArray("AAD+////AAACAAoAAAABAP//AAAEAAoAAAD/////AAADAAoAAAAAAP//AAADAAoAAAD+/wAAAAABAA0AAAABAAAAAAAFAA0AAAD//wAAAAADAA4AAAAAAAAAAAADAA4AAAA=")

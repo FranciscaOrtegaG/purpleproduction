@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhbfakfslgbjc"]
+
+[ext_resource type="PackedScene" uid="uid://c5cgh5geicxo4" path="res://escenas/escena_dimensiones/dm_1.tscn" id="1_10ohv"]
+[ext_resource type="PackedScene" uid="uid://dsv8mxkkgjtex" path="res://escenas/escena_dimensiones/dm_2.tscn" id="2_f52sl"]
+
+[node name="Superposicion" type="Node2D"]
+
+[node name="dm1" parent="." instance=ExtResource("1_10ohv")]
+
+[node name="dm2" parent="." instance=ExtResource("2_f52sl")]

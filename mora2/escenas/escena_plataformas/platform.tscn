@@ -1,26 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3k6f8rblfpgm"]
+[gd_scene load_steps=5 format=4 uid="uid://dv0007f4fi5oh"]
 
-[ext_resource type="Texture2D" uid="uid://fbsy8niwv3kp" path="res://icon.svg" id="1_wffn8"]
+[ext_resource type="PackedScene" uid="uid://cesjwuaeqa87n" path="res://components/tilemap.tscn" id="1_j52u4"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lbo2g"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_itr43"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpsx8"]
-size = Vector2(1384.5, 97)
+size = Vector2(64, 32)
 
 [node name="Platform" type="Node2D"]
+scale = Vector2(2, 2)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 material = SubResource("CanvasItemMaterial_lbo2g")
-position = Vector2(82, 7)
 physics_material_override = SubResource("PhysicsMaterial_itr43")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(504.75, -1.5)
 shape = SubResource("RectangleShape2D_rpsx8")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-81, -6.00001)
-scale = Vector2(0.545918, 0.44898)
-texture = ExtResource("1_wffn8")
+[node name="TileMapLayer" parent="." instance=ExtResource("1_j52u4")]
+tile_map_data = PackedByteArray("AAD+////AAACAAAAAAD/////AAADAAAAAAAAAP//AAADAAAAAAABAP//AAAEAAAAAAD+/wAAAAABAAMAAAABAAAAAAAFAAMAAAD//wAAAAADAAMAAAAAAAAAAAADAAMAAAA=")

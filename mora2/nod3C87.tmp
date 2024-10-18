@@ -26,6 +26,6 @@ autoplay = true
 [node name="PauseMenu" parent="." instance=ExtResource("6_us5sw")]
 visible = false
 
-[node name="dm2" parent="." instance=ExtResource("5_7wau2")]
-
 [node name="dm1" parent="." instance=ExtResource("4_a3ptu")]
+
+[node name="dm2" parent="." instance=ExtResource("5_7wau2")]
