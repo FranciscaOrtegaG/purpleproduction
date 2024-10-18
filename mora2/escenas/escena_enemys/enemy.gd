@@ -8,8 +8,8 @@ extends CharacterBody2D
 @export var left_limit = -100
 @export var right_limit = 100
 
-@onready var hurtbox: Hurtbox = $Node2D/Hurtbox
-@onready var hitbox: Hitbox = $Node2D/Hitbox
+@onready var hurtbox: Hurtbox = $Hurtbox
+@onready var hitbox: Hitbox = $Hitbox
 
 var direction = 1
 
@@ -42,6 +42,7 @@ func _on_damage_dealt() -> void:
 	
 
 func take_damage(damage: int):
+	print("enemy hurt")
 	enemylife -= damage
 	animation_player.play("hurt")
 	if enemylife <= 0:

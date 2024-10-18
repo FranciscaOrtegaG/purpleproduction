@@ -76,6 +76,7 @@ func _on_damage_dealt() -> void:
 	
 func take_damage(damage: int):
 	playerlife -= damage
+	print("player hurt")
 	if playerlife <= 0:
 		queue_free()	
 		get_tree().change_scene_to_file("res://escenas/escena_loser/Loser.tscn")

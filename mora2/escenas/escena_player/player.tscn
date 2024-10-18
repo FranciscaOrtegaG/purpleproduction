@@ -16,7 +16,7 @@ radius = 26.0
 height = 126.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_byy7l"]
-size = Vector2(32.7469, 6.17134)
+size = Vector2(32.7469, 10.2044)
 
 [sub_resource type="Animation" id="Animation_v44ol"]
 length = 0.001
@@ -503,7 +503,7 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(186.763, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qa53g"]
-size = Vector2(54.4053, 100.783)
+size = Vector2(54.4053, 109.764)
 
 [node name="player" type="CharacterBody2D"]
 position = Vector2(-79, 48)
@@ -541,7 +541,7 @@ collision_mask = 4
 script = ExtResource("7_ta4am")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pivote/Hitbox"]
-position = Vector2(-5.96772, 45.9097)
+position = Vector2(-2.43714, 41.0343)
 rotation = -3.14159
 scale = Vector2(1.89134, -2.22679)
 shape = SubResource("RectangleShape2D_byy7l")
@@ -553,7 +553,7 @@ collision_mask = 2
 script = ExtResource("8_wr3lo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pivote/Hurtbox"]
-position = Vector2(-3.44464, -14.3466)
+position = Vector2(-3.44464, -9.85625)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qa53g")
 
