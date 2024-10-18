@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://2pi08wln6g2r"]
+
+[ext_resource type="PackedScene" uid="uid://c5cgh5geicxo4" path="res://scenes/levels/dm_1.tscn" id="1_0wejx"]
+[ext_resource type="PackedScene" uid="uid://dsv8mxkkgjtex" path="res://scenes/levels/dm_2.tscn" id="2_y1lab"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="dm1" parent="." instance=ExtResource("1_0wejx")]
+
+[node name="dm2" parent="." instance=ExtResource("2_y1lab")]

@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkxde5564rr5g"]
+[gd_scene load_steps=3 format=3 uid="uid://e5aepa11tltk"]
 
-[ext_resource type="Texture2D" uid="uid://df07unqpkue1m" path="res://assets/sprites/Dungeon Platformer Tileset [16x16][FREE] - RottingPixels/CosmicCastleLilacPNG_PetricakeGames.png" id="1_aqo4r"]
-[ext_resource type="Script" path="res://scripts/control.gd" id="1_hnm01"]
-[ext_resource type="PackedScene" uid="uid://dk3mhe0yrddtt" path="res://scenes/levels/level_1.tscn" id="2_we8s4"]
+[ext_resource type="Script" path="res://scripts/control.gd" id="1_5eaen"]
+[ext_resource type="PackedScene" uid="uid://dk3mhe0yrddtt" path="res://scenes/levels/level_1.tscn" id="2_7yv7q"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,13 +10,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_hnm01")
-main = ExtResource("2_we8s4")
-
-[node name="CosmicCastleLilacPngPetricakeGames" type="Sprite2D" parent="."]
-position = Vector2(582, 305)
-scale = Vector2(4.52723, 4.18438)
-texture = ExtResource("1_aqo4r")
+script = ExtResource("1_5eaen")
+main = ExtResource("2_7yv7q")
 
 [node name="MainMenu" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -29,7 +23,8 @@ scale = Vector2(2.10824, 2.29829)
 
 [node name="Label" type="Label" parent="MainMenu"]
 layout_mode = 2
-text = "SUPERMORADO"
+text = "MORA2"
+horizontal_alignment = 1
 
 [node name="Start" type="Button" parent="MainMenu"]
 unique_name_in_owner = true
