@@ -17,10 +17,11 @@ offset_top = 223.0
 offset_right = 841.0
 offset_bottom = 324.0
 scale = Vector2(1.13834, 2.20145)
-text = "music: https://brackeysgames.itch.io/brackeys-platformer-bundle
-fonts: https://datagoblin.itch.io/monogram
+text = "Music: https://brackeysgames.itch.io/brackeys-platformer-bundle
+Fonts: https://datagoblin.itch.io/monogram
 character: https://jumpbutton.itch.io/girlknightasset
-
+Tiles:https://anokolisa.itch.io/basic-140-tiles-grassland-and-mines
+Enemy:https://eduardscarpato.itch.io/toxic-frog-animations-pixel-art-2d-free
 "
 label_settings = SubResource("LabelSettings_sbvl8")
 horizontal_alignment = 1
