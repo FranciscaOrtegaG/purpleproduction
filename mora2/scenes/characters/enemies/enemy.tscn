@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://midlmbk8b4i4"]
 
 [ext_resource type="Script" path="res://scenes/characters/enemies/enemy.gd" id="1_1c07l"]
-[ext_resource type="Texture2D" uid="uid://cvncqbunmisld" path="res://assets/sprites/ToxicFrog/PurpleBlue/ToxicFrogPurpleBlue_Idle.png" id="2_e24t3"]
+[ext_resource type="Texture2D" uid="uid://cvncqbunmisld" path="res://assets/ToxicFrog/PurpleBlue/ToxicFrogPurpleBlue_Idle.png" id="2_e24t3"]
 [ext_resource type="Script" path="res://components/hurtbox.gd" id="3_nos5f"]
 [ext_resource type="Script" path="res://components/hitbox.gd" id="4_gqfm4"]
 

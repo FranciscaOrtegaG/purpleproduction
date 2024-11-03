@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dlw0hm5o0x6bn" path="res://scenes/characters/player/player.tscn" id="1_bm5rm"]
 [ext_resource type="Script" path="res://scenes/levels/first_level/first_level_script.gd" id="1_i6nx5"]
-[ext_resource type="PackedScene" uid="uid://c5cgh5geicxo4" path="res://scenes/levels/first_level/dim_1.tscn" id="4_a3ptu"]
-[ext_resource type="PackedScene" uid="uid://dsv8mxkkgjtex" path="res://scenes/levels/first_level/dim_2.tscn" id="5_7wau2"]
-[ext_resource type="AudioStream" uid="uid://ddb7rnv1btmdb" path="res://assets/sounds/Stream Loops 2024-03-30_02.ogg" id="5_cq8ci"]
+[ext_resource type="PackedScene" uid="uid://c5cgh5geicxo4" path="res://dm_1.tscn" id="4_a3ptu"]
+[ext_resource type="PackedScene" uid="uid://dsv8mxkkgjtex" path="res://dm_2.tscn" id="5_7wau2"]
+[ext_resource type="AudioStream" uid="uid://ddb7rnv1btmdb" path="res://assets/Stream Loops 2024-03-30_02.ogg" id="5_cq8ci"]
 [ext_resource type="PackedScene" uid="uid://bd2toblo7sxi0" path="res://scenes/ui/menu_pausa/pausarmenu.tscn" id="6_us5sw"]
 
 [node name="main" type="Node2D"]
@@ -12,6 +12,7 @@ script = ExtResource("1_i6nx5")
 
 [node name="player" parent="." instance=ExtResource("1_bm5rm")]
 position = Vector2(40, 368)
+attacking = false
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(298.221, -47.897)

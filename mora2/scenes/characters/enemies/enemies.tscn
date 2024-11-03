@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dmgal6rbb7803"]
 
-[ext_resource type="Texture2D" uid="uid://d1jh8ph78efhk" path="res://assets/sprites/ToxicFrog/PurpleBlue/ToxicFrogPurpleBlue_Hurt.png" id="2_xcerp"]
-[ext_resource type="Texture2D" uid="uid://cvncqbunmisld" path="res://assets/sprites/ToxicFrog/PurpleBlue/ToxicFrogPurpleBlue_Idle.png" id="3_e7ra1"]
+[ext_resource type="Texture2D" uid="uid://d1jh8ph78efhk" path="res://assets/ToxicFrog/PurpleBlue/ToxicFrogPurpleBlue_Hurt.png" id="2_xcerp"]
+[ext_resource type="Texture2D" uid="uid://cvncqbunmisld" path="res://assets/ToxicFrog/PurpleBlue/ToxicFrogPurpleBlue_Idle.png" id="3_e7ra1"]
 
 [sub_resource type="GDScript" id="GDScript_6gmrr"]
 script/source = "extends CharacterBody2D
