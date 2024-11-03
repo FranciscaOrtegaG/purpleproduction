@@ -56,7 +56,7 @@ func _physics_process(delta: float) -> void:
 	if position.y > 800:
 		Global.player_position = Vector2(0, 0) 
 		get_tree().change_scene_to_file("res://escenas/escena_loser/Loser.tscn")
-	if position.x > 3440:
+	if position.x > 2650:
 		get_tree().change_scene_to_file("res://escenas/escena_winner/Winner.tscn")
 	if Input.is_action_just_pressed("ui_down"):
 		

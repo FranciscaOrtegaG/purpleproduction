@@ -84,7 +84,7 @@ func _physics_process(delta: float) -> void:
 		get_tree().change_scene_to_packed(LOSER)
 
 	# Si el jugador llega al final del nivel
-	if position.x > 3440:
+	if position.x > 2650:
 		get_tree().change_scene_to_packed(WINNER)
 
 # Función que se ejecuta cuando el jugador hace daño

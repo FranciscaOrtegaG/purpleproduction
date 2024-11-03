@@ -16,10 +16,11 @@ func _ready() -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_packed(main)
+	get_tree().change_scene_to_file("res://scenes/levels/first_level/first_level_test.tscn")
 
 
 func _on_credits_pressed() -> void:
 	get_tree().change_scene_to_packed(CREDITS)
+	
 	
 	

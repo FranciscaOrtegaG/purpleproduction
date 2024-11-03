@@ -12,7 +12,6 @@ script = ExtResource("1_i6nx5")
 
 [node name="player" parent="." instance=ExtResource("1_bm5rm")]
 position = Vector2(40, 368)
-attacking = false
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(298.221, -47.897)
@@ -28,5 +27,7 @@ autoplay = true
 visible = false
 
 [node name="dim_2" parent="." instance=ExtResource("5_7wau2")]
+visible = false
 
 [node name="dim_1" parent="." instance=ExtResource("4_a3ptu")]
+visible = false
