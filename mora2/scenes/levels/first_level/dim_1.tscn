@@ -1,6 +1,12 @@
-[gd_scene load_steps=5 format=4 uid="uid://c5cgh5geicxo4"]
+[gd_scene load_steps=11 format=4 uid="uid://c5cgh5geicxo4"]
 
 [ext_resource type="PackedScene" uid="uid://midlmbk8b4i4" path="res://scenes/characters/enemies/enemy.tscn" id="1_n84we"]
+[ext_resource type="Texture2D" uid="uid://dyaygmg2wn484" path="res://assets/Clouds/Clouds 8/1.png" id="2_2oe5k"]
+[ext_resource type="Texture2D" uid="uid://yw13tfg7sleu" path="res://assets/Clouds/Clouds 8/2.png" id="3_lyxa3"]
+[ext_resource type="Texture2D" uid="uid://dcq3oo08q3isd" path="res://assets/Clouds/Clouds 8/3.png" id="4_83rnw"]
+[ext_resource type="Texture2D" uid="uid://tkxdoemxd3tj" path="res://assets/Clouds/Clouds 8/4.png" id="5_6q6k2"]
+[ext_resource type="Texture2D" uid="uid://blgicy5q3eywp" path="res://assets/Clouds/Clouds 8/5.png" id="6_8o1oj"]
+[ext_resource type="Texture2D" uid="uid://dcgpgqdidvrht" path="res://assets/Clouds/Clouds 8/6.png" id="7_pjyxc"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qy30q"]
 load_path = "res://.godot/imported/Assets.png-03bb749df83c28e5875eee03f44a60fe.ctex"
@@ -753,6 +759,46 @@ terrain_set_1/terrain_1/color = Color(0.657625, 0.096803, 0.813849, 1)
 sources/0 = SubResource("TileSetAtlasSource_pyvv7")
 
 [node name="dm1" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1, 0)
+repeat_size = Vector2(1110, 0)
+
+[node name="1" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(3, 4.00003)
+scale = Vector2(1.99132, 1.98457)
+texture = ExtResource("2_2oe5k")
+centered = false
+
+[node name="2" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(-1, 4)
+scale = Vector2(2.0003, 1.98294)
+texture = ExtResource("3_lyxa3")
+centered = false
+
+[node name="3" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(6, 8.00002)
+scale = Vector2(1.98275, 1.97907)
+texture = ExtResource("4_83rnw")
+centered = false
+
+[node name="4" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(6.00003, 2.99998)
+scale = Vector2(1.97907, 1.97839)
+texture = ExtResource("5_6q6k2")
+centered = false
+
+[node name="5" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(2, 5)
+scale = Vector2(1.99033, 1.98932)
+texture = ExtResource("6_8o1oj")
+centered = false
+
+[node name="6" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(5.00003, 7.00002)
+scale = Vector2(1.98773, 1.95385)
+texture = ExtResource("7_pjyxc")
+centered = false
 
 [node name="tiles_dim_1" type="TileMapLayer" parent="."]
 unique_name_in_owner = true

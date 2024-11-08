@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://brbllys7lnl6o" path="res://assets/sprites/Knight_player_1.3/Knight_player/Landing_KG_1.png" id="6_sv7ga"]
 [ext_resource type="Script" path="res://components/hitbox.gd" id="7_ta4am"]
 [ext_resource type="Script" path="res://components/hurtbox.gd" id="8_wr3lo"]
-[ext_resource type="AudioStream" uid="uid://dqjv4guq4fpif" path="res://assets/sounds/jump.wav" id="9_7343h"]
-[ext_resource type="AudioStream" uid="uid://bwwfrdtu6ykhy" path="res://assets/sounds/tap.wav" id="10_xnd5u"]
+[ext_resource type="AudioStream" uid="uid://dqjv4guq4fpif" path="res://assets/jump.wav" id="9_7343h"]
+[ext_resource type="AudioStream" uid="uid://bwwfrdtu6ykhy" path="res://assets/tap.wav" id="10_xnd5u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gh0cr"]
 radius = 26.0
