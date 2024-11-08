@@ -10,6 +10,7 @@
 script/source = "extends Node2D
 
 var character_scene = preload(\"res://scenes/levels/first_level/first_level_test.tscn\")  # Cargar la escena del personaje
+\"res://scenes/levels/first_level/first_level_test.tscn\"
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_caaxu"]
