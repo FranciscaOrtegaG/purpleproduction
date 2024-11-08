@@ -1,12 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://midlmbk8b4i4"]
+[gd_scene load_steps=10 format=3 uid="uid://4gpaq7x7f25e"]
 
-[ext_resource type="Script" path="res://escenas/escena_enemys/enemy.gd" id="1_1c07l"]
-[ext_resource type="Texture2D" uid="uid://cvncqbunmisld" path="res://assets/ToxicFrog/PurpleBlue/ToxicFrogPurpleBlue_Idle.png" id="2_e24t3"]
-[ext_resource type="Script" path="res://components/hurtbox.gd" id="3_nos5f"]
-[ext_resource type="Script" path="res://components/hitbox.gd" id="4_gqfm4"]
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_lwugw"]
+[ext_resource type="Texture2D" uid="uid://d1jh8ph78efhk" path="res://assets/ToxicFrog/PurpleBlue/ToxicFrogPurpleBlue_Hurt.png" id="2_xcerp"]
+[ext_resource type="Texture2D" uid="uid://cvncqbunmisld" path="res://assets/ToxicFrog/PurpleBlue/ToxicFrogPurpleBlue_Idle.png" id="3_e7ra1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6otvd"]
-size = Vector2(82.0235, 37.3777)
+[sub_resource type="CircleShape2D" id="CircleShape2D_dixsw"]
 
 [sub_resource type="Animation" id="Animation_nh7ls"]
 length = 0.001
@@ -20,7 +18,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_e24t3")]
+"values": [ExtResource("3_e7ra1")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -180,7 +178,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_e24t3")]
+"values": [ExtResource("3_e7ra1")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -227,54 +225,19 @@ _data = {
 "idle": SubResource("Animation_ur3b8")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hc02"]
-size = Vector2(16.5737, 943441)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kqx6"]
-size = Vector2(7.82258, 47.7075)
-
 [node name="CharacterBody2D" type="CharacterBody2D"]
-collision_layer = 5
-collision_mask = 5
-script = ExtResource("1_1c07l")
-metadata/_edit_horizontal_guides_ = [-72.0]
+script = ExtResource("1_lwugw")
 
-[node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("4_gqfm4")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dixsw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(24, -8)
-scale = Vector2(0.777524, 0.864792)
-shape = SubResource("RectangleShape2D_6otvd")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -2)
+texture = ExtResource("2_xcerp")
+hframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
 libraries = {
 "": SubResource("AnimationLibrary_qgt7k")
 }
-
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-texture_filter = 1
-position = Vector2(16, 0)
-scale = Vector2(2.98428, -3.36274e-05)
-shape = SubResource("RectangleShape2D_3hc02")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(16, -8)
-scale = Vector2(3.56952, 2.43756)
-texture = ExtResource("2_e24t3")
-hframes = 8
-
-[node name="Hurtbox" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 4
-script = ExtResource("3_nos5f")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(24, -32)
-rotation = 3.14159
-scale = Vector2(9.19441, 0.35802)
-shape = SubResource("RectangleShape2D_8kqx6")

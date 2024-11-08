@@ -1,7 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://e5aepa11tltk"]
+[gd_scene load_steps=10 format=3 uid="uid://e5aepa11tltk"]
 
 [ext_resource type="Script" path="res://scripts/control.gd" id="1_k22ol"]
-[ext_resource type="PackedScene" uid="uid://dk3mhe0yrddtt" path="res://node_2d.tscn" id="2_h1e0k"]
+[ext_resource type="PackedScene" uid="uid://dlw0hm5o0x6bn" path="res://scenes/levels/player.tscn" id="2_d76rf"]
+[ext_resource type="AudioStream" uid="uid://ddb7rnv1btmdb" path="res://assets/Stream Loops 2024-03-30_02.ogg" id="3_x0go5"]
+[ext_resource type="PackedScene" uid="uid://bd2toblo7sxi0" path="res://scenes/ui/menu_pausa/pausarmenu.tscn" id="4_713oc"]
+[ext_resource type="PackedScene" uid="uid://midlmbk8b4i4" path="res://scenes/characters/enemies/enemy.tscn" id="5_rj3e7"]
+
+[sub_resource type="GDScript" id="GDScript_7dr5f"]
+script/source = "extends Node2D
+
+var character_scene = preload(\"res://node_2d.tscn\")  # Cargar la escena del personaje
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_caaxu"]
+
+[sub_resource type="Resource" id="Resource_dev5t"]
+metadata/__load_path__ = "res://dm_1.tscn"
+
+[sub_resource type="PackedScene" id="PackedScene_x77h0"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("main", "Node2D", "position", "script", "Parallax2D", "Parallax2D", "scroll_scale", "StaticBody2D", "StaticBody2D", "CollisionShape2D", "CollisionShape2D", "shape", "debug_color", "player", "position", "AudioStreamPlayer2D", "AudioStreamPlayer2D", "stream", "autoplay", "PauseMenu", "visible", "dm1", "position", "CharacterBody2D", "position", "speed", "left_limit", "right_limit"),
+"node_count": 9,
+"node_paths": [NodePath("."), NodePath("."), NodePath("./StaticBody2D"), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 2, 2, 0, 3, 1, 0, 1073741824, 0, 5, 4, -1, 1, 6, 2, 0, 1073741825, 0, 8, 7, -1, 0, 0, 1073741826, 0, 10, 9, -1, 2, 11, 3, 12, 4, 0, 1073741827, 0, 2147483647, 13, 5, 1, 14, 6, 0, 1073741828, 0, 16, 15, -1, 2, 17, 7, 18, 8, 0, 1073741829, 0, 2147483647, 19, 9, 1, 20, 10, 0, 1073741830, 0, 2147483647, 21, 11, 1, 22, 12, 0, 1073741831, 0, 2147483647, 23, 13, 4, 24, 14, 25, 15, 26, 16, 27, 17, 0),
+"variants": [Vector2(-73, 81), SubResource("GDScript_7dr5f"), Vector2(0, 0), SubResource("RectangleShape2D_caaxu"), Color(0.646042, 0.360298, 0.948663, 0.42), ExtResource("2_d76rf"), Vector2(-36, 630), ExtResource("3_x0go5"), true, ExtResource("4_713oc"), false, SubResource("Resource_dev5t"), Vector2(1, -1), ExtResource("5_rj3e7"), Vector2(395.753, 441.838), 20, 250, 350],
+"version": 3
+}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,7 +38,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_k22ol")
-main = ExtResource("2_h1e0k")
+main = SubResource("PackedScene_x77h0")
 
 [node name="MainMenu" type="VBoxContainer" parent="."]
 layout_mode = 0

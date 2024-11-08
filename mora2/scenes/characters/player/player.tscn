@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dlw0hm5o0x6bn"]
+[gd_scene load_steps=35 format=3 uid="uid://bsow87jhxg2ts"]
 
 [ext_resource type="Texture2D" uid="uid://c7oe32q1wv73u" path="res://assets/sprites/Knight_player_1.3/Knight_player/Walking_KG_1.png" id="1_jtu3j"]
 [ext_resource type="Script" path="res://scenes/characters/player/player.gd" id="1_l7s7c"]

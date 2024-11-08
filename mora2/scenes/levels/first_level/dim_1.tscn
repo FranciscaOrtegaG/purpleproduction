@@ -761,6 +761,7 @@ sources/0 = SubResource("TileSetAtlasSource_pyvv7")
 [node name="dm1" type="Node2D"]
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
+visible = false
 scroll_scale = Vector2(1, 0)
 repeat_size = Vector2(1110, 0)
 
@@ -809,11 +810,13 @@ tile_map_data = PackedByteArray("AAAXAAcAAAADAAAAAAAYAAgAAAADAAMAAAAZAAgAAAADAAM
 tile_set = SubResource("TileSet_ugd2n")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_n84we")]
+visible = false
 position = Vector2(1591, 442)
 left_limit = 1500
 right_limit = 1650
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("1_n84we")]
+visible = false
 position = Vector2(1923, 372)
 left_limit = 1850
 right_limit = 1950

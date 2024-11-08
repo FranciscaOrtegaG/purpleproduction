@@ -2,10 +2,10 @@ extends Node2D
 
 @onready var dimension_1: Node2D = $dim_1
 @onready var dimension_2: Node2D = $dim_2
-@onready var tiles_dim_1: TileMapLayer = %tiles_dim_1
+@onready var tiles_dim_1: TileMapLayer = $dim_1/tiles_dim_1
 @onready var tiles_dim_2: TileMapLayer = $dim_2/tiles_dim_2
 
-@onready var player: Player = $player
+@onready var player = $player
 var current_dimension = 1
 
 func _ready() -> void:
