@@ -5,6 +5,9 @@ extends Node2D
 @onready var tiles_dim_1: TileMapLayer = $dim_1/tiles_dim_1
 @onready var tiles_dim_2: TileMapLayer = $dim_2/tiles_dim_2
 @onready var player: Player = $player
+@onready var left_border: StaticBody2D = $LeftBorder
+
+
 var current_dimension = 1
 
 func _ready() -> void:
@@ -25,8 +28,12 @@ func _ready() -> void:
 	# Para dimensión 2
 	tileset_dim_2.set_physics_layer_collision_layer(0, 5)  # Capa de colisión 5
 	tileset_dim_2.set_physics_layer_collision_mask(0, 2)   # Máscara de colisión 2 (jugador)
+	
+	# Setear mascara y layer de colision para bordes
+	left_border.collision_layer = 1
+	left_border.collision_mask = 2
 
-	# Habilitamos las colisiones en tiles_dim_1 y deshabilitamos en tiles_dim_2
+	# Habilitamos las colisiones en tiles_dim_1 y en los bordes, y deshabilitamos en tiles_dim_2
 	tiles_dim_1.collision_enabled = true
 	tiles_dim_2.collision_enabled = false
 
@@ -35,7 +42,7 @@ func _ready() -> void:
 
 	# Configuramos la máscara de colisión del jugador para la dimensión inicial
 	player.collision_layer = 2
-	player.collision_mask = 4  # Colisiona con la capa 4 (dimensión 1)
+	player.collision_mask = 1|4  # Colisiona con la capa 4 (dimensión 1) o capa 1 (bordes)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_down"):
@@ -52,7 +59,7 @@ func change_dimension() -> void:
 
 		# Cambiamos la máscara de colisión del jugador para la dimensión 2
 		player.collision_layer = 2
-		player.collision_mask = 5  # Colisiona con la capa 5 (dimensión 2)
+		player.collision_mask = 1|5  # Colisiona con la capa 5 (dimensión 2) o capa 1 (bordes)
 
 		# Deshabilitamos colisiones en tiles_dim_1 y habilitamos en tiles_dim_2
 		tiles_dim_1.collision_enabled = false
@@ -65,7 +72,7 @@ func change_dimension() -> void:
 		set_dimension_state(dimension_2, false)
 
 		player.collision_layer = 2
-		player.collision_mask = 4  # Colisiona con la capa 4 (dimensión 1)
+		player.collision_mask = 1|4  # Colisiona con la capa 4 (dimensión 1)
 
 		# Habilitamos colisiones en tiles_dim_1 y deshabilitamos en tiles_dim_2
 		tiles_dim_1.collision_enabled = true

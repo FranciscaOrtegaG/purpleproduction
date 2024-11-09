@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dk3mhe0yrddtt"]
+[gd_scene load_steps=8 format=3 uid="uid://dk3mhe0yrddtt"]
 
 [ext_resource type="PackedScene" uid="uid://dlw0hm5o0x6bn" path="res://scenes/characters/player/player.tscn" id="1_bm5rm"]
 [ext_resource type="Script" path="res://scenes/levels/first_level/first_level_script.gd" id="1_i6nx5"]
@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dsv8mxkkgjtex" path="res://scenes/levels/first_level/dim_2.tscn" id="5_7wau2"]
 [ext_resource type="AudioStream" uid="uid://ddb7rnv1btmdb" path="res://assets/sounds/Stream Loops 2024-03-30_02.ogg" id="5_cq8ci"]
 [ext_resource type="PackedScene" uid="uid://bd2toblo7sxi0" path="res://scenes/ui/menu_pausa/pausarmenu.tscn" id="6_us5sw"]
+[ext_resource type="PackedScene" uid="uid://bao1wdxnapvnt" path="res://scenes/objects/border.tscn" id="7_42ccd"]
 
-[node name="main" type="Node2D"]
+[node name="FirstLevel" type="Node2D"]
 script = ExtResource("1_i6nx5")
 
 [node name="player" parent="." instance=ExtResource("1_bm5rm")]
@@ -17,6 +18,7 @@ position = Vector2(40, 368)
 position = Vector2(298.221, -47.897)
 scale = Vector2(1.0075, 0.997855)
 zoom = Vector2(0.815, 0.815)
+limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -29,3 +31,15 @@ visible = false
 [node name="dim_2" parent="." instance=ExtResource("5_7wau2")]
 
 [node name="dim_1" parent="." instance=ExtResource("4_a3ptu")]
+
+[node name="LeftBorder" parent="." instance=ExtResource("7_42ccd")]
+position = Vector2(-91, 276)
+scale = Vector2(1, 4.24)
+
+[node name="TopBorder" parent="." instance=ExtResource("7_42ccd")]
+position = Vector2(670, -144)
+scale = Vector2(46, 0.8)
+
+[node name="BottomBorder" parent="." instance=ExtResource("7_42ccd")]
+position = Vector2(670, 712)
+scale = Vector2(46, -0.8)
