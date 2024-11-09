@@ -27,11 +27,17 @@ const LOSER = preload("res://scenes/ui/loser/Loser.tscn")
 const wall_jump_pushback = 100
 var can_wall_jump = false  # Variable para controlar si puede hacer wall jump
 
+# Variables para invulnerabilidad
+var is_invulnerable = false
+var invulnerability_time = 1.0  # Duración de la invulnerabilidad en segundos
+
+
 # Función que se ejecuta cuando el nodo entra en la escena
 func _ready() -> void:
 	position = Global.player_position  # Restauramos la posición guardada
 	animation_tree.active = true
 	hitbox.damage_dealt.connect(_on_damage_dealt)
+	add_to_group("Player")
 
 # Función que controla la física y los movimientos del jugador
 func _physics_process(delta: float) -> void:
@@ -87,6 +93,11 @@ func _physics_process(delta: float) -> void:
 	if position.x > 3440:
 		get_tree().change_scene_to_packed(WINNER)
 
+# Método para hacer rebotar al jugador
+func bounce():
+	velocity.y = -jump_speed  # Rebotar hacia arriba con la misma velocidad de salto
+	jump_sound.play()         # Reproducir el sonido de salto (opcional)
+
 # Función que se ejecuta cuando el jugador hace daño
 func _on_damage_dealt() -> void:
 	hit.play()
@@ -94,9 +105,51 @@ func _on_damage_dealt() -> void:
 	print("We made damage to enemy")
 
 # Función para manejar el daño recibido
-func take_damage(damage: int):
-	playerlife -= damage
-	print("player hurt")
-	if playerlife <= 0:
-		queue_free()	
-		get_tree().change_scene_to_packed(LOSER)
+func take_damage(damage: int, attacker_position = null):
+	if not is_invulnerable:
+		playerlife -= damage
+		is_invulnerable = true
+		flash_red()  # Llama a la función para destellar en rojo
+		if attacker_position != null:
+			apply_knockback(attacker_position)  # Aplica el empuje hacia atrás
+		print("Player hurt, life remaining: ", playerlife)
+		if playerlife <= 0:
+			die()
+		else:
+			# Iniciar invulnerabilidad temporal
+			var invulnerability_timer = get_tree().create_timer(invulnerability_time)
+			invulnerability_timer.timeout.connect(_end_invulnerability)
+	else:
+		print("Player is invulnerable")
+
+func _end_invulnerability():
+	is_invulnerable = false
+	sprite_2d.modulate = Color(1, 1, 1)  # Restablece el color original
+
+# Función para manejar la muerte del jugador
+func die():
+	queue_free()    
+	get_tree().change_scene_to_packed(LOSER)
+	
+func flash_red():
+	sprite_2d.modulate = Color(1, 0, 0)  # Cambia el color a rojo
+	# Inicia un temporizador para restaurar el color original
+	var flash_timer = Timer.new()
+	flash_timer.wait_time = 0.1  # Duración del destello en segundos
+	flash_timer.one_shot = true
+	add_child(flash_timer)
+	flash_timer.timeout.connect(_on_flash_timer_timeout)
+	flash_timer.start()
+	
+func _on_flash_timer_timeout():
+	sprite_2d.modulate = Color(1, 1, 1)  # Restaura el color original
+	# Obtener referencia al temporizador y eliminarlo
+	var flash_timer = get_node("flash_timer")
+	if flash_timer:
+		flash_timer.queue_free()
+		
+func apply_knockback(attacker_position: Vector2):
+	var knockback_strength = 300  # Ajusta este valor según sea necesario
+	var knockback_direction = (global_position - attacker_position).normalized()
+	# Aplica el empuje a la velocidad del jugador
+	velocity += knockback_direction * knockback_strength

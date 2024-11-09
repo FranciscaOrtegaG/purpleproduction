@@ -1,9 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://corrdjec4vnwr"]
+[gd_scene load_steps=12 format=3 uid="uid://corrdjec4vnwr"]
 
 [ext_resource type="Script" path="res://scenes/characters/frog_enemy/frog_enemy.gd" id="1_ke8ad"]
 [ext_resource type="Texture2D" uid="uid://b4duub61kxgsa" path="res://assets/sprites/ToxicFrog/PurpleBlue/ToxicFrogPurpleBlue_Sheet.png" id="2_gr5kv"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dixsw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpjc8"]
+size = Vector2(16.5, 6.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7bae"]
+size = Vector2(21.875, 11.875)
 
 [sub_resource type="Animation" id="Animation_awoyc"]
 resource_name = "Hop"
@@ -111,22 +115,36 @@ _data = {
 "explosion": SubResource("Animation_ivv50")
 }
 
-[node name="FrogEnemy" type="CharacterBody2D"]
-collision_layer = 4
-collision_mask = 2
+[node name="FrogEnemy" type="Node2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_ke8ad")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_dixsw")
+[node name="HurtArea2D" type="Area2D" parent="."]
+scale = Vector2(1, 1)
+collision_layer = 4
+collision_mask = 27
+
+[node name="HurtBox" type="CollisionShape2D" parent="HurtArea2D"]
+position = Vector2(0.750001, -6.1875)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_tpjc8")
+debug_color = Color(0.93262, 0.236422, 0.282437, 0.42)
+
+[node name="HitArea2D" type="Area2D" parent="."]
+scale = Vector2(1, 1)
+collision_layer = 4
+collision_mask = 27
+
+[node name="HitBox" type="CollisionShape2D" parent="HitArea2D"]
+position = Vector2(-0.312499, 1.5625)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_a7bae")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2, -2)
 texture = ExtResource("2_gr5kv")
 hframes = 9
 vframes = 5
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(36, 39)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -137,4 +155,6 @@ libraries = {
 wait_time = 2.0
 autostart = true
 
+[connection signal="body_entered" from="HurtArea2D" to="." method="_on_hurt_area_2d_body_entered"]
+[connection signal="body_entered" from="HitArea2D" to="." method="_on_hit_area_2d_body_entered"]
 [connection signal="timeout" from="HopTimer" to="." method="_on_hop_timer_timeout"]

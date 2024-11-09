@@ -1,12 +1,15 @@
-extends CharacterBody2D
+extends Node2D
 
-@onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var hop_timer: Timer = $HopTimer
+@onready var hurt_box: CollisionShape2D = $Area2D/HurtBox
+@onready var hit_box: CollisionShape2D = $Area2D2/HitBox
 
 
-var hit_count = 0  # Contador de golpes hacia la rana
+var hit_count = 0   # Cuenta las vidas restantes de la rana (inicialmente 0, sumaremos al recibir daño)
+var frog_lifes = 2
+var max_hits = 2    # Número de golpes necesarios para eliminar a la rana
 
 func _ready() -> void:
 	animation_player.play("Idle")
@@ -21,25 +24,41 @@ func _on_hop_finished(anim_name: String) -> void:
 
 func take_damage():
 	hit_count += 1
+	frog_lifes -= 1
 	animation_player.play("damage")
-	if hit_count >= 2:
+	if hit_count >= max_hits:
+		die()
+	if frog_lifes == 0:
 		die()
 
 func die():
 	animation_player.play("explosion")
-	animation_player.animation_finished.connect(_on_animation_finished)
-
-func _on_animation_finished(anim_name: String) -> void:
-	if anim_name == "explosion":
-		queue_free()  # Elimina el nodo de la rana después de la animación
+	var finished_animation = await animation_player.animation_finished
+	if finished_animation == "explosion":
+		queue_free()
 
 func attack():
 	animation_player.play("attack")
 	# Aquí puedes agregar lógica para el ataque si el jugador está cerca
+	
 
+func attack_player(body):
+	animation_player.play("attack")
+	body.take_damage(1, global_position)  # Asumiendo que el jugador tiene un método `take_damage(amount)`
 
 func _on_hop_timer_timeout() -> void:
 	# Reproducir animación de salto
 	animation_player.play("Hop")
 	# Conectar la señal para volver a "idle" después de la animación "hop"
 	animation_player.animation_finished.connect(_on_hop_finished)
+
+
+func _on_hit_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		attack_player(body)
+
+
+func _on_hurt_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		take_damage()
+		body.bounce()
