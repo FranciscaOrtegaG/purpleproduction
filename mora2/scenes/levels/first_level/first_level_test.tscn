@@ -39,7 +39,3 @@ scale = Vector2(1, 4.24)
 [node name="TopBorder" parent="." instance=ExtResource("7_42ccd")]
 position = Vector2(670, -144)
 scale = Vector2(46, 0.8)
-
-[node name="BottomBorder" parent="." instance=ExtResource("7_42ccd")]
-position = Vector2(670, 712)
-scale = Vector2(46, -0.8)

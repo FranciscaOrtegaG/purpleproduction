@@ -79,7 +79,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	# Si el jugador cae del mapa, reiniciamos su posición
-	if position.y > 800:
+	if position.y > 1500:
 		Global.player_position = Vector2(0, 0) 
 		get_tree().change_scene_to_packed(LOSER)
 
