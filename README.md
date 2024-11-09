@@ -46,25 +46,21 @@ Contiene todas las escenas del juego, organizadas por tipo.
 
 Escenas y scripts relacionados con los personajes del juego.
 
-- **enemies/**: Escena de enemigos genéricos (`enemies.tscn`).
-- **enemy/**: Escena y script para un tipo específico de enemigo (`enemy.tscn`, `enemy.gd`).
-- **enemys/**: Otra variante de enemigos (asegúrate de consolidar si es redundante).
+- **frog_enemy/**: Escena y script de rana enemiga (`frog_enemy.tscn`, `frog_enemy.gd`).
 - **player/**: Escena y script del jugador (`player.tscn`, `player.gd`).
 
 #### 3.2. levels
 
 Escenas que representan los diferentes niveles o áreas del juego.
 
-- **dm_1.tscn**, **dm_2.tscn**: Escenas de niveles específicos.
-- **END.tscn**: Escena del nivel final.
-- **level_1.tscn**, **node_2d.tscn**, **otradimension.tscn**, **otradimension1.tscn**: Otros niveles o dimensiones del juego.
-- **test.tscn**: Escena de prueba para experimentación y testing.
+- **dim_1.tscn**, **dim_2.tscn**: dimensiones del primer nivel
+- **first_level_test.tscn**: Escena del primer nivel de prueba, donde se instancian la dimensión 1 y 2 para jugar.
+- **first_level_script.gd**: Script que controla la lógica del primer nivel de prueba.
 
 #### 3.3. objects
 
 Escenas de objetos interactivos y estáticos del juego.
 
-- **meta/**: Escena y script de la meta o línea de llegada (`meta.tscn`, `meta.gd`).
 - **platforms/**: Escenas de plataformas utilizadas en los niveles (`platform.tscn`, `platforms.tscn`).
 
 #### 3.4. ui
@@ -81,7 +77,6 @@ Escenas y scripts relacionados con la interfaz de usuario.
 
 Scripts globales y aquellos que no están directamente asociados con una escena específica.
 
-- **character_body_2d.gd**: Script base para personajes que heredan de `CharacterBody2D`.
 - **control.gd**: Script para manejar controles generales del juego.
 - **Global.gd**: Script autoload que contiene variables y funciones globales.
 
