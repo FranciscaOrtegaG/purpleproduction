@@ -470,6 +470,9 @@ texture = ExtResource("1_6byx8")
 9:8/0 = 0
 10:8/0 = 0
 11:8/0 = 0
+11:8/0/terrain_set = 2
+11:8/0/terrain = 0
+11:8/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:8/0 = 0
 13:8/0 = 0
 16:8/0 = 0
@@ -737,6 +740,8 @@ texture = ExtResource("1_6byx8")
 [sub_resource type="TileSet" id="TileSet_eg7dc"]
 physics_layer_0/collision_layer = 8
 physics_layer_0/collision_mask = 2
+physics_layer_1/collision_layer = 32
+physics_layer_1/collision_mask = 2
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Flat_Grass"
 terrain_set_0/terrain_0/color = Color(0, 0.815686, 0.321569, 1)
@@ -747,6 +752,9 @@ terrain_set_1/terrain_0/name = "Stone_Terrain"
 terrain_set_1/terrain_0/color = Color(0.608756, 0.486063, 0.388461, 1)
 terrain_set_1/terrain_1/name = "Purple_Terrain"
 terrain_set_1/terrain_1/color = Color(0.657625, 0.096803, 0.813849, 1)
+terrain_set_2/mode = 0
+terrain_set_2/terrain_0/name = "Spikes"
+terrain_set_2/terrain_0/color = Color(0.140266, 0.431968, 0.451781, 1)
 sources/0 = SubResource("TileSetAtlasSource_k4dcs")
 
 [node name="TileMapLayer" type="TileMapLayer"]

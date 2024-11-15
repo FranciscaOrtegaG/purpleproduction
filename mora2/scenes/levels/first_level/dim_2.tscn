@@ -1,6 +1,11 @@
-[gd_scene load_steps=5 format=4 uid="uid://dsv8mxkkgjtex"]
+[gd_scene load_steps=8 format=4 uid="uid://dsv8mxkkgjtex"]
 
+[ext_resource type="Script" path="res://scripts/spikes.gd" id="1_6fduy"]
 [ext_resource type="PackedScene" uid="uid://corrdjec4vnwr" path="res://scenes/characters/frog_enemy/frog_enemy.tscn" id="1_dwi3x"]
+[ext_resource type="PackedScene" uid="uid://dghisqyg180n1" path="res://components/Tiles.tscn" id="2_v1pyp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvnni"]
+size = Vector2(37.0581, 20)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ev46s"]
 load_path = "res://.godot/imported/Assets.png-03bb749df83c28e5875eee03f44a60fe.ctex"
@@ -776,6 +781,36 @@ sources/0 = SubResource("TileSetAtlasSource_dcit7")
 [node name="dm2" type="Node2D"]
 position = Vector2(524, -174)
 
+[node name="spikes" type="Area2D" parent="."]
+scale = Vector2(4.03954, 4.03021)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_6fduy")
+
+[node name="TileMapLayer" parent="spikes" instance=ExtResource("2_v1pyp")]
+position = Vector2(-1.73287, -6.94753)
+scale = Vector2(1, 1)
+tile_map_data = PackedByteArray("AAD1/woAAAALAAgAAAD2/woAAAALAAgAAAD3/woAAAALAAgAAAD+/woAAAALAAgAAAD//woAAAALAAgAAAAAAAoAAAALAAgAAAAfAAsAAAALAAgAAAAgAAsAAAALAAgAAAAXAAsAAAALAAgAAAA=")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes"]
+position = Vector2(-153.656, 163.763)
+shape = SubResource("RectangleShape2D_jvnni")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="spikes"]
+position = Vector2(-11.1399, 164.011)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_jvnni")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="spikes"]
+position = Vector2(509.711, 179.147)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_jvnni")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="spikes"]
+position = Vector2(375.043, 176.17)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_jvnni")
+
 [node name="tiles_dim_2" type="TileMapLayer" parent="."]
 unique_name_in_owner = true
 position = Vector2(-1009, 149)
@@ -803,3 +838,5 @@ scale = Vector2(4, 4)
 [node name="FrogEnemy5" parent="." instance=ExtResource("1_dwi3x")]
 position = Vector2(1382, 699)
 scale = Vector2(4, 4)
+
+[connection signal="body_entered" from="spikes" to="spikes" method="_on_body_entered"]
