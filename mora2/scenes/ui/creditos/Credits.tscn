@@ -29,6 +29,7 @@ justification_flags = 128
 
 [node name="MENU" type="Button" parent="."]
 unique_name_in_owner = true
+texture_filter = 1
 layout_mode = 0
 offset_left = 454.0
 offset_top = 54.0

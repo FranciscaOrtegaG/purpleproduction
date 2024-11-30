@@ -33,9 +33,9 @@ visible = false
 [node name="dim_1" parent="." instance=ExtResource("4_a3ptu")]
 
 [node name="LeftBorder" parent="." instance=ExtResource("7_42ccd")]
-position = Vector2(-91, 276)
+position = Vector2(-320, 145)
 scale = Vector2(1, 4.24)
 
 [node name="TopBorder" parent="." instance=ExtResource("7_42ccd")]
-position = Vector2(670, -144)
+position = Vector2(649, -270)
 scale = Vector2(46, 0.8)

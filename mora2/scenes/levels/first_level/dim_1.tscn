@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://c5cgh5geicxo4"]
+[gd_scene load_steps=7 format=4 uid="uid://c5cgh5geicxo4"]
 
 [ext_resource type="PackedScene" uid="uid://y5e4iqdtrqpu" path="res://scenes/objects/plataformas/special_platform.tscn" id="1_oba7k"]
+[ext_resource type="Texture2D" uid="uid://d00ns5jitus2c" path="res://assets/sprites/Tiles/Background_1.png" id="2_gobc7"]
+[ext_resource type="Texture2D" uid="uid://b6shfhq3btxys" path="res://assets/sprites/Tiles/Background_2.png" id="3_we7b2"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qy30q"]
 load_path = "res://.godot/imported/Assets.png-03bb749df83c28e5875eee03f44a60fe.ctex"
@@ -761,5 +763,28 @@ tile_map_data = PackedByteArray("AAADAAUAAAAJAAEAAAACAAUAAAAJAAEAAAABAAUAAAAJAAE
 tile_set = SubResource("TileSet_ugd2n")
 
 [node name="SpecialPlatform" parent="." instance=ExtResource("1_oba7k")]
-position = Vector2(94, 105)
+position = Vector2(936, 399)
 collision_layer = 1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -1
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1488, 816)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(3, 3)
+texture = ExtResource("2_gobc7")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -2
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1488, 816)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(0, -2)
+scale = Vector2(3, 3)
+texture = ExtResource("3_we7b2")
+centered = false
