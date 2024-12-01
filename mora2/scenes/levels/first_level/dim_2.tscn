@@ -1,8 +1,12 @@
-[gd_scene load_steps=8 format=4 uid="uid://dsv8mxkkgjtex"]
+[gd_scene load_steps=12 format=4 uid="uid://dsv8mxkkgjtex"]
 
 [ext_resource type="Script" path="res://scripts/spikes.gd" id="1_6fduy"]
 [ext_resource type="PackedScene" uid="uid://corrdjec4vnwr" path="res://scenes/characters/frog_enemy/frog_enemy.tscn" id="1_dwi3x"]
 [ext_resource type="PackedScene" uid="uid://dghisqyg180n1" path="res://components/Tiles.tscn" id="2_v1pyp"]
+[ext_resource type="Texture2D" uid="uid://lc3a5afjonmw" path="res://assets/sprites/Cave_Background/ParallaxCave1.png" id="4_3ilyl"]
+[ext_resource type="Texture2D" uid="uid://hu7b0mlv24rh" path="res://assets/sprites/Cave_Background/ParallaxCave2.png" id="5_ejuna"]
+[ext_resource type="Texture2D" uid="uid://cy1tvtvm3oayy" path="res://assets/sprites/Cave_Background/ParallaxCave3.png" id="6_fvksg"]
+[ext_resource type="Texture2D" uid="uid://bgcqq5g2toddb" path="res://assets/sprites/Cave_Background/ParallaxCave4.png" id="7_ri5hc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvnni"]
 size = Vector2(37.0581, 20)
@@ -798,17 +802,14 @@ shape = SubResource("RectangleShape2D_jvnni")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="spikes"]
 position = Vector2(-11.1399, 164.011)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_jvnni")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="spikes"]
 position = Vector2(509.711, 179.147)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_jvnni")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="spikes"]
 position = Vector2(375.043, 176.17)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_jvnni")
 
 [node name="tiles_dim_2" type="TileMapLayer" parent="."]
@@ -838,5 +839,35 @@ scale = Vector2(4, 4)
 [node name="FrogEnemy5" parent="." instance=ExtResource("1_dwi3x")]
 position = Vector2(1382, 699)
 scale = Vector2(4, 4)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -1
+motion_mirroring = Vector2(1152, 1088)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("4_3ilyl")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -2
+motion_mirroring = Vector2(1152, 1088)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("5_ejuna")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -2
+motion_mirroring = Vector2(1152, 1088)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("6_fvksg")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -4
+motion_mirroring = Vector2(1152, 1088)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+texture = ExtResource("7_ri5hc")
 
 [connection signal="body_entered" from="spikes" to="spikes" method="_on_body_entered"]
