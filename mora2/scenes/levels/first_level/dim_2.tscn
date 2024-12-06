@@ -785,6 +785,30 @@ sources/0 = SubResource("TileSetAtlasSource_dcit7")
 [node name="dm2" type="Node2D"]
 position = Vector2(524, -174)
 
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1, 0)
+repeat_size = Vector2(1235, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(-196, 278)
+scale = Vector2(1.56944, 2.10938)
+texture = ExtResource("7_ri5hc")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(-194.5, 296.5)
+scale = Vector2(1.57205, 1.22518)
+texture = ExtResource("6_fvksg")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(-188, 307.5)
+scale = Vector2(1.5625, 1.15717)
+texture = ExtResource("5_ejuna")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(-199.5, 283)
+scale = Vector2(1.57552, 1.22426)
+texture = ExtResource("4_3ilyl")
+
 [node name="spikes" type="Area2D" parent="."]
 scale = Vector2(4.03954, 4.03021)
 collision_layer = 4
@@ -846,28 +870,16 @@ scale = Vector2(4, 4)
 z_index = -1
 motion_mirroring = Vector2(1152, 1088)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource("4_3ilyl")
-
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = -2
 motion_mirroring = Vector2(1152, 1088)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource("5_ejuna")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = -2
 motion_mirroring = Vector2(1152, 1088)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-texture = ExtResource("6_fvksg")
-
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = -4
 motion_mirroring = Vector2(1152, 1088)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-texture = ExtResource("7_ri5hc")
 
 [connection signal="body_entered" from="spikes" to="spikes" method="_on_body_entered"]

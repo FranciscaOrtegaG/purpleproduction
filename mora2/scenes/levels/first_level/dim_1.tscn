@@ -756,6 +756,22 @@ sources/0 = SubResource("TileSetAtlasSource_pyvv7")
 
 [node name="dm1" type="Node2D"]
 
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.5, 0)
+repeat_size = Vector2(2100, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(6, -110)
+scale = Vector2(4.40323, 4.56985)
+texture = ExtResource("3_we7b2")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(1, -113)
+scale = Vector2(4.42944, 4.50368)
+texture = ExtResource("2_gobc7")
+centered = false
+
 [node name="tiles_dim_1" type="TileMapLayer" parent="."]
 unique_name_in_owner = true
 scale = Vector2(4.03954, 4.03021)
@@ -767,24 +783,14 @@ position = Vector2(936, 399)
 collision_layer = 1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = -1
 motion_scale = Vector2(0.2, 0.2)
 motion_mirroring = Vector2(1488, 816)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-scale = Vector2(3, 3)
-texture = ExtResource("2_gobc7")
-centered = false
-
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = -2
 motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(1488, 816)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(0, -2)
-scale = Vector2(3, 3)
-texture = ExtResource("3_we7b2")
-centered = false

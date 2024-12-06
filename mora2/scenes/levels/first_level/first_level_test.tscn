@@ -11,16 +11,6 @@
 [node name="FirstLevel" type="Node2D"]
 script = ExtResource("1_i6nx5")
 
-[node name="player" parent="." instance=ExtResource("1_bm5rm")]
-position = Vector2(40, 368)
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(298.221, -47.897)
-scale = Vector2(1.0075, 0.997855)
-zoom = Vector2(0.815, 0.815)
-limit_smoothed = true
-position_smoothing_enabled = true
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_cq8ci")
 autoplay = true
@@ -39,3 +29,13 @@ scale = Vector2(1, 4.24)
 [node name="TopBorder" parent="." instance=ExtResource("7_42ccd")]
 position = Vector2(649, -270)
 scale = Vector2(46, 0.8)
+
+[node name="player" parent="." instance=ExtResource("1_bm5rm")]
+position = Vector2(40, 368)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(298.221, -47.897)
+scale = Vector2(1.0075, 0.997855)
+zoom = Vector2(0.815, 0.815)
+limit_smoothed = true
+position_smoothing_enabled = true
