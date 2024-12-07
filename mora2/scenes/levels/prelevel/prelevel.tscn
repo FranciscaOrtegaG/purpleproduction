@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm3mfvhitc6au"]
+
+[ext_resource type="PackedScene" uid="uid://dq7ptbu1dmt0c" path="res://scenes/levels/prelevel/prelevel2.tscn" id="1_per1e"]
+[ext_resource type="PackedScene" uid="uid://o2tl1bjfndi1" path="res://scenes/levels/prelevel/prelevel1.tscn" id="2_7jn4o"]
+[ext_resource type="PackedScene" uid="uid://dlw0hm5o0x6bn" path="res://scenes/characters/player/player.tscn" id="3_rf5lw"]
+
+[node name="prelevel" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_per1e")]
+position = Vector2(2493, 278)
+
+[node name="prelevel1" parent="." instance=ExtResource("2_7jn4o")]
+position = Vector2(-20, 93)
+
+[node name="player" parent="." instance=ExtResource("3_rf5lw")]
+position = Vector2(38, 585)

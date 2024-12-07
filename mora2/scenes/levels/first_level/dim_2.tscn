@@ -14,7 +14,7 @@ size = Vector2(37.0581, 20)
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ev46s"]
 load_path = "res://.godot/imported/Assets.png-03bb749df83c28e5875eee03f44a60fe.ctex"
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dcit7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rltff"]
 texture = SubResource("CompressedTexture2D_ev46s")
 2:0/next_alternative_id = 2
 2:0/0 = 0
@@ -780,7 +780,7 @@ terrain_set_1/terrain_0/name = "Stone_Terrain"
 terrain_set_1/terrain_0/color = Color(0.608756, 0.486063, 0.388461, 1)
 terrain_set_1/terrain_1/name = "Purple_Terrain"
 terrain_set_1/terrain_1/color = Color(0.657625, 0.096803, 0.813849, 1)
-sources/0 = SubResource("TileSetAtlasSource_dcit7")
+sources/0 = SubResource("TileSetAtlasSource_rltff")
 
 [node name="dm2" type="Node2D"]
 position = Vector2(524, -174)
