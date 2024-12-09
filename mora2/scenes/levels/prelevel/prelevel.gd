@@ -5,12 +5,15 @@ extends Node2D
 @onready var tiles_dim_1: TileMapLayer = $dim_1/tiles_dim_1
 @onready var tiles_dim_2: TileMapLayer = $dim_2/tiles_dim_2
 @onready var player: Player = $player
+@onready var menu: Button = $Final/Menu
 
-
-
+	
 var current_dimension = 1
 
 func _ready() -> void:
+	menu.pressed.connect(_on_menu_pressed)
+	
+
 	# Mostramos la dimensión 1 y desactivamos la dimensión 2 al inicio
 	dimension_1.visible = true
 	dimension_2.visible = false
@@ -40,7 +43,7 @@ func _ready() -> void:
 	# Configuramos la máscara de colisión del jugador para la dimensión inicial
 	player.collision_layer = 2
 	player.collision_mask = 1|4  # Colisiona con la capa 4 (dimensión 1) o capa 1 (bordes)
-
+	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_down"):
 		change_dimension()
@@ -86,3 +89,7 @@ func set_dimension_state(dimension: Node, is_active: bool) -> void:
 			child.set_process(is_active)
 			# Llamada recursiva para ajustar los descendientes
 			set_dimension_state(child, is_active)
+			
+			
+func _on_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/ui/main_menu/MainMenu.tscn")

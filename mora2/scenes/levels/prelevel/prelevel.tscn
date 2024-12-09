@@ -1,20 +1,126 @@
-[gd_scene load_steps=6 format=3 uid="uid://cm3mfvhitc6au"]
+[gd_scene load_steps=16 format=3 uid="uid://cm3mfvhitc6au"]
 
 [ext_resource type="Script" path="res://scenes/levels/prelevel/prelevel.gd" id="1_3arsx"]
 [ext_resource type="PackedScene" uid="uid://dq7ptbu1dmt0c" path="res://scenes/levels/prelevel/prelevel2.tscn" id="1_per1e"]
 [ext_resource type="PackedScene" uid="uid://o2tl1bjfndi1" path="res://scenes/levels/prelevel/prelevel1.tscn" id="2_7jn4o"]
+[ext_resource type="PackedScene" uid="uid://bd2toblo7sxi0" path="res://scenes/ui/menu_pausa/pausarmenu.tscn" id="3_6emgd"]
 [ext_resource type="PackedScene" uid="uid://dlw0hm5o0x6bn" path="res://scenes/characters/player/player.tscn" id="3_rf5lw"]
 [ext_resource type="PackedScene" uid="uid://bao1wdxnapvnt" path="res://scenes/objects/border.tscn" id="5_3lywt"]
+[ext_resource type="Texture2D" uid="uid://big4xy0yly1u6" path="res://assets/imagenes/laotraderecha.png" id="6_sld46"]
+[ext_resource type="Texture2D" uid="uid://dx4irtq4mm1eq" path="res://assets/imagenes/izquierda.png" id="7_7i26l"]
+[ext_resource type="Texture2D" uid="uid://b2amk045fycmg" path="res://assets/imagenes/arriba.png" id="8_awil4"]
+[ext_resource type="Texture2D" uid="uid://dicnu802qmkvi" path="res://assets/imagenes/abajo.png" id="9_jnfnd"]
+[ext_resource type="Texture2D" uid="uid://bahb2q80mf5w4" path="res://assets/imagenes/esc.png" id="11_65ago"]
+
+[sub_resource type="FontVariation" id="FontVariation_2o8ld"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ctwbh"]
+font = SubResource("FontVariation_2o8ld")
+font_color = Color(0.344076, 0.344076, 0.344076, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_wai58"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_aw044"]
+font = SubResource("FontVariation_wai58")
 
 [node name="prelevel" type="Node2D"]
 position = Vector2(-24, 10)
 script = ExtResource("1_3arsx")
 
-[node name="dim_2" parent="." instance=ExtResource("1_per1e")]
-position = Vector2(1011, 121)
-
 [node name="dim_1" parent="." instance=ExtResource("2_7jn4o")]
 position = Vector2(-166, -20)
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_6emgd")]
+
+[node name="avanzar" type="Label" parent="."]
+offset_left = 26.0002
+offset_top = 262.0
+offset_right = 432.0
+offset_bottom = 337.0
+text = "Press      to move to the right 
+and       to move lo the left"
+label_settings = SubResource("LabelSettings_ctwbh")
+
+[node name="saltar" type="Label" parent="."]
+offset_left = 463.0
+offset_top = 346.0
+offset_right = 869.0
+offset_bottom = 421.0
+text = "Press      to jump
+"
+label_settings = SubResource("LabelSettings_ctwbh")
+
+[node name="kill" type="Label" parent="."]
+offset_left = 878.0
+offset_top = 222.0
+offset_right = 1284.0
+offset_bottom = 297.0
+text = "Jump over the enemy
+
+"
+label_settings = SubResource("LabelSettings_ctwbh")
+
+[node name="pausa" type="Label" parent="."]
+offset_left = -302.0
+offset_top = 389.0
+offset_right = 104.0
+offset_bottom = 464.0
+text = "Press      to pause
+
+"
+label_settings = SubResource("LabelSettings_ctwbh")
+
+[node name="dimension" type="Label" parent="."]
+offset_left = 1129.0
+offset_top = 199.0
+offset_right = 1535.0
+offset_bottom = 274.0
+text = "Press      to change dimension
+"
+label_settings = SubResource("LabelSettings_ctwbh")
+
+[node name="Laotraderecha" type="Sprite2D" parent="."]
+position = Vector2(81, 276)
+scale = Vector2(1.46209, 1.54708)
+texture = ExtResource("6_sld46")
+
+[node name="Izquierda" type="Sprite2D" parent="."]
+position = Vector2(70, 299)
+scale = Vector2(1.44485, 1.31343)
+texture = ExtResource("7_7i26l")
+
+[node name="Arriba" type="Sprite2D" parent="."]
+position = Vector2(518, 358)
+scale = Vector2(1.36151, 1.19349)
+texture = ExtResource("8_awil4")
+
+[node name="Abajo" type="Sprite2D" parent="."]
+position = Vector2(1184, 210)
+scale = Vector2(1.33416, 1.38312)
+texture = ExtResource("9_jnfnd")
+
+[node name="dim_2" parent="." instance=ExtResource("1_per1e")]
+visible = false
+position = Vector2(1011, 121)
+
+[node name="Final" type="Label" parent="."]
+offset_left = 3295.0
+offset_top = 397.0
+offset_right = 3478.0
+offset_bottom = 446.0
+scale = Vector2(0.922495, 0.916792)
+text = "END OF TUTORIAL"
+label_settings = SubResource("LabelSettings_aw044")
+
+[node name="Menu" type="Button" parent="Final"]
+layout_mode = 0
+offset_left = -9.75627
+offset_top = 27.269
+offset_right = 43.2437
+offset_bottom = 58.269
+scale = Vector2(2.94239, 1.50764)
+text = "Menu"
+metadata/_edit_use_anchors_ = true
 
 [node name="player" parent="." instance=ExtResource("3_rf5lw")]
 
@@ -32,10 +138,6 @@ scale = Vector2(-0.905416, 3.5695)
 position = Vector2(3312, 397)
 scale = Vector2(1, 4.24)
 
-[node name="TUT" type="Label" parent="."]
-offset_left = 3310.0
-offset_top = 397.0
-offset_right = 3493.0
-offset_bottom = 446.0
-text = "END OF TUTORIAL
-Press esc to go to menu"
+[node name="Esc" type="Sprite2D" parent="."]
+position = Vector2(-248, 403)
+texture = ExtResource("11_65ago")
