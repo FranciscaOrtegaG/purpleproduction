@@ -776,7 +776,7 @@ terrain_set_1/terrain_1/name = "Purple_Terrain"
 terrain_set_1/terrain_1/color = Color(0.657625, 0.096803, 0.813849, 1)
 sources/0 = SubResource("TileSetAtlasSource_mknt1")
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2" type="Node2D"]
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_scale = Vector2(1, 0)

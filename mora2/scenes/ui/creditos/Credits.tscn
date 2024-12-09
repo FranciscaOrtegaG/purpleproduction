@@ -1,25 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5gpe5kpfdtxi"]
+[gd_scene load_steps=5 format=3 uid="uid://b5gpe5kpfdtxi"]
 
 [ext_resource type="Script" path="res://scenes/ui/creditos/credits.gd" id="1_pitn1"]
+[ext_resource type="Texture2D" uid="uid://bfscfrxj35eak" path="res://assets/imagenes/fondomenu.jpg" id="2_gqtj1"]
+
+[sub_resource type="FontVariation" id="FontVariation_7pteu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sbvl8"]
+font = SubResource("FontVariation_7pteu")
+font_color = Color(0.883582, 0.94624, 0.7867, 1)
 
 [node name="Credits" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_pitn1")
 
+[node name="Fondomenu" type="Sprite2D" parent="."]
+position = Vector2(588, 367)
+scale = Vector2(2.00209, 2.68711)
+texture = ExtResource("2_gqtj1")
+
 [node name="Label" type="Label" parent="."]
 modulate = Color(1, 0.603922, 1, 1)
 layout_mode = 0
-offset_left = 267.0
-offset_top = 223.0
-offset_right = 841.0
-offset_bottom = 324.0
-scale = Vector2(1.13834, 2.20145)
-text = "music: https://brackeysgames.itch.io/brackeys-platformer-bundle
-fonts: https://datagoblin.itch.io/monogram
-character: https://jumpbutton.itch.io/girlknightasset
+offset_left = 256.0
+offset_top = 215.0
+offset_right = 830.0
+offset_bottom = 420.0
+scale = Vector2(1.18632, 2.17987)
+text = "Music: https://brackeysgames.itch.io/brackeys-platformer-bundle
+Fonts: https://datagoblin.itch.io/monogram
+Character: https://jumpbutton.itch.io/girlknightasset
+Developers: 
+Francisca Ortega
+Iván Salas
+Jonathan Riquelme 
 
 "
 label_settings = SubResource("LabelSettings_sbvl8")

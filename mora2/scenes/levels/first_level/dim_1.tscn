@@ -757,17 +757,19 @@ sources/0 = SubResource("TileSetAtlasSource_q166h")
 [node name="dm1" type="Node2D"]
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
+scale = Vector2(1.40705, 1.50553)
 scroll_scale = Vector2(0.5, 0)
+scroll_offset = Vector2(-332, -72)
 repeat_size = Vector2(2100, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-position = Vector2(6, -110)
+position = Vector2(-159, -152)
 scale = Vector2(4.40323, 4.56985)
 texture = ExtResource("3_we7b2")
 centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="Parallax2D"]
-position = Vector2(1, -113)
+position = Vector2(-163, -145)
 scale = Vector2(4.42944, 4.50368)
 texture = ExtResource("2_gobc7")
 centered = false

@@ -1,16 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://cm3mfvhitc6au"]
+[gd_scene load_steps=6 format=3 uid="uid://cm3mfvhitc6au"]
 
+[ext_resource type="Script" path="res://scenes/levels/prelevel/prelevel.gd" id="1_3arsx"]
 [ext_resource type="PackedScene" uid="uid://dq7ptbu1dmt0c" path="res://scenes/levels/prelevel/prelevel2.tscn" id="1_per1e"]
 [ext_resource type="PackedScene" uid="uid://o2tl1bjfndi1" path="res://scenes/levels/prelevel/prelevel1.tscn" id="2_7jn4o"]
 [ext_resource type="PackedScene" uid="uid://dlw0hm5o0x6bn" path="res://scenes/characters/player/player.tscn" id="3_rf5lw"]
+[ext_resource type="PackedScene" uid="uid://bao1wdxnapvnt" path="res://scenes/objects/border.tscn" id="5_3lywt"]
 
 [node name="prelevel" type="Node2D"]
+position = Vector2(-24, 10)
+script = ExtResource("1_3arsx")
 
-[node name="Node2D" parent="." instance=ExtResource("1_per1e")]
-position = Vector2(2493, 278)
+[node name="dim_2" parent="." instance=ExtResource("1_per1e")]
+position = Vector2(1011, 121)
 
-[node name="prelevel1" parent="." instance=ExtResource("2_7jn4o")]
-position = Vector2(-20, 93)
+[node name="dim_1" parent="." instance=ExtResource("2_7jn4o")]
+position = Vector2(-166, -20)
 
 [node name="player" parent="." instance=ExtResource("3_rf5lw")]
-position = Vector2(38, 585)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+
+[node name="LeftBorder" parent="." instance=ExtResource("5_3lywt")]
+position = Vector2(-155, 300)
+scale = Vector2(1, 4.24)
+
+[node name="LeftBorder2" parent="." instance=ExtResource("5_3lywt")]
+position = Vector2(1359, -25)
+scale = Vector2(-0.905416, 3.5695)
+
+[node name="LeftBorder3" parent="." instance=ExtResource("5_3lywt")]
+position = Vector2(3312, 397)
+scale = Vector2(1, 4.24)
+
+[node name="TUT" type="Label" parent="."]
+offset_left = 3310.0
+offset_top = 397.0
+offset_right = 3493.0
+offset_bottom = 446.0
+text = "END OF TUTORIAL
+Press esc to go to menu"
