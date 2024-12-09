@@ -43,6 +43,7 @@ layout_mode = 2
 text = "Credits"
 
 [node name="Tutorial" type="Button" parent="MainMenu"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Tutorial
 "

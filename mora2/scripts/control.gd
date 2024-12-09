@@ -5,7 +5,7 @@ extends Control
 @onready var start: Button = %Start
 @onready var credits: Button = %Credits
 @onready var quit: Button = %Quit
-@onready var tutorial: Button = $MainMenu/Tutorial
+@onready var tutorial: Button = %Tutorial
 
 const CREDITS = preload("res://scenes/ui/creditos/Credits.tscn")
 
