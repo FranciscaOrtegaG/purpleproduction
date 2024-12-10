@@ -9,6 +9,8 @@ extends Node2D
 
 
 var current_dimension = 1
+var WIN_X_POSITION = 6600
+var LOSE_Y_POSITION = 1000
 
 func _ready() -> void:
 	# Mostramos la dimensión 1 y desactivamos la dimensión 2 al inicio
@@ -45,6 +47,13 @@ func _ready() -> void:
 	player.collision_mask = 1|4  # Colisiona con la capa 4 (dimensión 1) o capa 1 (bordes)
 
 func _process(delta: float) -> void:
+	# Chequeo de victoria
+	if player.position.x > WIN_X_POSITION:
+		get_tree().change_scene_to_file("res://scenes/ui/winner/Winner.tscn")
+	# Chequeo de derrota
+	if player.position.y > LOSE_Y_POSITION:
+		get_tree().change_scene_to_file("res://scenes/ui/loser/Loser.tscn")
+		
 	if Input.is_action_just_pressed("ui_down"):
 		change_dimension()
 
